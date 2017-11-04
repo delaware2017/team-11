@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
-from nominations.forms import NominatorForm, StudentForm
+from nominations.forms import NominatorForm, StudentForm, AcademicForm
 
 urlpatterns = [
     url(r'^accounts/login/', LoginView.as_view(), name="user_login"),
@@ -37,6 +37,12 @@ urlpatterns = [
             template_name='nominations/view_applications.html',
             success_url='/',
             form_class=StudentForm
+    )),
+
+    url(r'^students/submission/', CreateView.as_view(
+            template_name='nominations/student_submissions.html',
+            success_url='/',
+            form_class=AcademicForm
     )),
     
     url(r'^admin/', admin.site.urls),

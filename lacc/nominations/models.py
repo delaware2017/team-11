@@ -23,7 +23,7 @@ class Nominator(models.Model):
 class Student(models.Model):
     GENDER = (
         ('M', 'Male'),
-        ('F', 'Female'),
+        ('F', 'Female'), ('O', 'Other')
     )
     id = models.IntegerField(primary_key=True)
     first_name = models.CharField(default="", max_length=30)
@@ -52,6 +52,9 @@ class Student(models.Model):
         """this sets the default return for this object"""
         return self.description
 
+
+
+
 class Grader(models.Model):
 
     id = models.IntegerField(primary_key=True)
@@ -68,7 +71,7 @@ class Grader(models.Model):
 class Academics(models.Model):
 
     id = models.IntegerField(primary_key=True)
-    gpa = models.FloatField(default=0.0)
+    gpa = models.FloatField(default="")
     weighted = models.BooleanField(default=False)
     class_rank = models.IntegerField(default=0)
     class_size = models.IntegerField(default=0)

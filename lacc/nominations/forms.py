@@ -1,4 +1,4 @@
-from nominations.models import Nominator, Student
+from nominations.models import Nominator, Student, Academics
 from django.forms import ModelForm
 
 class StudentForm(ModelForm):
@@ -27,3 +27,22 @@ class NominatorForm(ModelForm):
         model = Nominator
         fields = ['first_name', 'last_name', 'phone', 'email', 'password']
         fields_required = fields
+
+
+class AcademicForm(ModelForm):
+    class Meta:
+        model = Academics
+        fields = [
+        'gpa',
+        'weighted',
+        'class_rank',
+        'class_size',
+        'sat_composite',
+        'act_composite',
+        'number_ap_classes',
+        'academic_awards',
+        'organizations',
+            ]
+        fields_required = fields
+
+
