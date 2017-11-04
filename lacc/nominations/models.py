@@ -36,6 +36,7 @@ class Nominator(models.Model):
     first_name = models.CharField(default="null", max_length=30)
     last_name = models.CharField(default="null", max_length=30)
     email = models.CharField(default="null", max_length=200)
+    password = models.CharField(default="null", max_length=200)
     phone = models.CharField(default="null", max_length=10)
     #students = models.OneToManyField(Student)
 
