@@ -13,36 +13,54 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
         <![endif]-->
+        <style>
+            #bannerimage {
+                margin: 0 auto;
+                width: 70%;
+                background-image: url(https://static.wixstatic.com/media/334d90_79c4dabc8711e381be67d8fdad955b67.jpg/v1/fill/w_1103,h_216,al_c,lg_1,q_80/334d90_79c4dabc8711e381be67d8fdad955b67.webp);
+                height: 215px;
+                background-color: purple;
+                background-position: center;
+            }
+            #inner {
+                width: 50%;
+                margin: 0 auto;
+            }
+
+        </style>
     </head>
 
     <body>
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
+                <div id="bannerimage"></div>
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Home</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Home</a>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            {% if request.user.username %}
-                                <a href="/accounts/logout/">Logout: {{ request.user.username }}</a>
-                            {% else %}
-                                <a href="/accounts/login/">Login</a>
-                            {% endif %}
-                        </li>
-                        <li>
-                            <a href="/accounts/register/">Register</a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    {% if request.user.username %}
+                                    <a href="/accounts/logout/">Logout: {{ request.user.username }}</a>
+                                    {% else %}
+                                    <a href="/accounts/login/">Login</a>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <a href="/accounts/register/">Register</a>
+                                </li>
+                            </ul>
+                       
+                    </div>
                 </div>
-            </div>
         </nav>
 
         <div class="container-fluid">
