@@ -1,20 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<<<<<<< HEAD
+
 <h2>Login</h2>
 <div>
 <form action="" method="post">{% csrf_token %}
 {{form}}
 <input type="submit" value="Confirm" />
-=======
-<form action="" method="post">
-    <table>
-        {% csrf_token %}
-        {{form.as_p}}
-    </table>
-    <button type="submit" class="btn btn-default">Submit</button>
->>>>>>> cc3615e02f90631502fa1f5cc1d714fdc42104f8
-</form>
 </div>
 {% endblock %}
