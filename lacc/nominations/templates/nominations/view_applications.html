@@ -2,20 +2,24 @@
 
 {% block body %}
 
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>View</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-  {% for student in query_results %}
-  <tr>
-    <td>{{student.first_name}}</td>
-    <td>{{student.last_name}}</td>
-  </tr>
-  {% endfor %}
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in query_results %}
+        <tr>
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}
