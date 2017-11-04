@@ -14,10 +14,7 @@ from nominations.forms import NominatorForm
 # Create your views here.
 
 def index(request):
-#    todos_by_user = User.objects.annotate(num_todos=Count('todo'))
-#    context = {
-#        'todos_by_user': todos_by_user
-#    }
+
     return render(request, "nominations/index.html")
 
 def get_nominator(request):
