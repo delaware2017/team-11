@@ -19,15 +19,18 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.edit import CreateView
 from django.views.generic.list import ListView
 from django.contrib.auth.forms import UserCreationForm
+<<<<<<< HEAD
 from nominations.forms import NominatorForm, StudentForm
 from nominations.views import student_list
+=======
+from nominations.forms import NominatorForm, StudentForm, AcademicForm, SignUpForm
+>>>>>>> cc3615e02f90631502fa1f5cc1d714fdc42104f8
 
 urlpatterns = [
     url(r'^accounts/login/', LoginView.as_view(), name="user_login"),
     url(r'^accounts/logout/', LogoutView.as_view(), name="user_logout"),
     url(r'^accounts/register/', CreateView.as_view(
             template_name='registration/register.html',
-            form_class = UserCreationForm,
             success_url='/'
     )),
     url(r'^student/create/', CreateView.as_view(
@@ -39,6 +42,15 @@ urlpatterns = [
             
     )),
 
+<<<<<<< HEAD
+=======
+    url(r'^students/submission/', CreateView.as_view(
+            template_name='nominations/student_submissions.html',
+            success_url='/',
+            form_class=AcademicForm
+    )),
+    
+>>>>>>> cc3615e02f90631502fa1f5cc1d714fdc42104f8
     url(r'^admin/', admin.site.urls),
     url(r'^', include('nominations.urls')),
 ]

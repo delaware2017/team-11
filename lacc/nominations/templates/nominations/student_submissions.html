@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>Student Academic Submission</h2>
+<div>
+  <form method="post" action="">
+    <table>
+    {% csrf_token %}
+    {{form.as_p}}
+  </table>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
