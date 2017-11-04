@@ -7,3 +7,4 @@ from .models import Grader
 from .models import Academics
 
 admin.site.register(Nominator)
+admin.site.register(Student)

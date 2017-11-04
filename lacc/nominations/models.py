@@ -18,7 +18,7 @@ class Nominator(models.Model):
     phone = models.CharField(default="", max_length=10)
     def __str__(self):
         """this sets the default return for this object"""
-        return self.description
+        return self.first_name
 
 class Student(models.Model):
     GENDER = (
@@ -50,7 +50,7 @@ class Student(models.Model):
 
     def __str__(self):
         """this sets the default return for this object"""
-        return self.description
+        return self.first_name
 
 class Grader(models.Model):
 

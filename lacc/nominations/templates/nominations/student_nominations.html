@@ -10,13 +10,12 @@
 <h5>Enter the following information about the student you wish to nominate.</h5>
 <br>
 <div>
-  <form action="" method="post">
-
+  <form action="{% url student_create}" method="post">
     {% csrf_token %}
     {{form.as_p}}
+    <input type="submit" value="Save" />
+</form>
 
-      <button type="submit" value="save" class="btn btn-primary">Submit</button>
-  </form>
 </div>
 
 
