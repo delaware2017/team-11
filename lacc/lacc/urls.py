@@ -33,6 +33,11 @@ urlpatterns = [
             success_url='/',
             form_class=StudentForm
     )),
+    url(r'^students/list/', CreateView.as_view(
+            template_name='nominations/view_applications.html',
+            success_url='/',
+            form_class=StudentForm
+    )),
     url(r'^landing/', CreateView.as_view(
             template_name='nominations/landing.html',
             success_url='/',

@@ -24,9 +24,7 @@ def get_nominator(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
-
     else:
-
         form = NominatorForm()
 
     return render(request, "registration/register.html", {'form': form})
@@ -38,12 +36,14 @@ def get_student(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
-
     else:
-
         form = StudentForm()
 
     return render(request, "nominations/student_nominations0.html", {'form': form})
+
+def print_student(request):
+    query_results = Student.objects.all()
+    return render(request, 'vist_applications.html', locals())
 
 #def landing(request):
 #    return render(request, "/landing.html")
