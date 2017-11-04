@@ -1,15 +1,17 @@
 ﻿{% extends 'base.html' %}
 
 {% block body %}
-    <div class="btn-group-vertical" role= "group" >
-        <form class="register-form">
-            <a class="btn btn-primary btn-lg btn-block" href="../accounts/student">Start Applications</a>
-            <button type="button" class="btn btn-success btn-lg btn-block">View Applications</button>
-            <button type="button" class="btn btn-info btn-lg btn-block">Completed Applications</button>
-            <button type="button" class="btn btn-danger btn-lg btn-block">Incomplete Applications</button>
-
-        </form>
-
+    <div class="panel-body text-center">
+        <div class="btn-group-vertical">
+            <form class="register-form">
+                <p class="text-center">
+                    <a class="btn btn-primary btn-lg btn-block" href="../accounts/student">Start Applications</a>
+                    <button type="button" class="btn btn-success btn-lg btn-block">View Applications</button>
+                    <button type="button" class="btn btn-info btn-lg btn-block">Completed Applications</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block">Incomplete Applications</button>
+                </p>
+            </form>
+   
+        </div>
     </div>
-
 {% endblock %}
