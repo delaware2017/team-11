@@ -29,7 +29,7 @@ urlpatterns = [
             success_url='/'
     )),
     url(r'^accounts/student/', CreateView.as_view(
-            template_name='nominations/student_nominations0.html',
+            template_name='nominations/student_nominations.html',
             success_url='/',
             form_class=StudentForm
     )),

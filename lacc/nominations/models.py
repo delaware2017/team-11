@@ -43,6 +43,7 @@ class Student(models.Model):
     resume = models.BooleanField(default=False)
     transcript = models.BooleanField(default=False)
     nominator = models.ForeignKey(Nominator, default=0)
+    password = models.CharField(default="null", max_length = 100)
 
     def __str__(self):
         """this sets the default return for this object"""
