@@ -1,4 +1,4 @@
-"""myproject URL Configuration
+"""lacc URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -19,7 +19,6 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 
-
 urlpatterns = [
     url(r'^accounts/login/', LoginView.as_view(), name="user_login"),
     url(r'^accounts/logout/', LogoutView.as_view(), name="user_logout"),
@@ -29,5 +28,5 @@ urlpatterns = [
             success_url='/'
     )),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('todos.urls')),
+    url(r'^', include('nominations.urls')),
 ]
