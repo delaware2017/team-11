@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^accounts/login/', LoginView.as_view(), name="user_login"),
     url(r'^accounts/logout/', LogoutView.as_view(), name="user_logout"),
     url(r'^accounts/register/', CreateView.as_view(
-            template_name='registration/register0.html',
+            template_name='registration/register.html',
             form_class = NominatorForm,
             success_url='/'
     )),
