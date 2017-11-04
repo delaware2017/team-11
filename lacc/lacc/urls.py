@@ -35,7 +35,8 @@ urlpatterns = [
     )),
     url(r'^landing/', CreateView.as_view(
             template_name='nominations/landing.html',
-            success_url='/'
+            success_url='/',
+            form_class=StudentForm
     )),
     url(r'^admin/', admin.site.urls),
     url(r'^', include('nominations.urls')),
