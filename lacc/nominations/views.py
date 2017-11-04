@@ -34,5 +34,8 @@ def print_student(request):
     query_results = Student.objects.all()
     return render(request, 'vist_applications.html', locals())
 
+@method_decorator(login_required, name='dispatch')
+def landing(request):
+    return render(request, "nominations/landing.html")
 
 

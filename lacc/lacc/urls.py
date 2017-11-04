@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^accounts/logout/', LogoutView.as_view(), name="user_logout"),
     url(r'^accounts/register/', CreateView.as_view(
             template_name='registration/register.html',
-            form_class = NominatorForm,
+            form_class = UserCreationForm,
             success_url='/'
     )),
     url(r'^accounts/student/', CreateView.as_view(
@@ -38,11 +38,7 @@ urlpatterns = [
             success_url='/',
             form_class=StudentForm
     )),
-    url(r'^landing/', CreateView.as_view(
-            template_name='nominations/landing.html',
-            success_url='/',
-            form_class=StudentForm
-    )),
+    
     url(r'^admin/', admin.site.urls),
     url(r'^', include('nominations.urls')),
 ]
