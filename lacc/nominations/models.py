@@ -1,18 +1,36 @@
 from django.db import models
 import datetime
 # Leverage Django's built-in User models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractBaseUser, PermissionsMixin
 from django.forms import ModelForm
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(default="", max_length=30)
+    last_name = models.CharField(default="", max_length=30)
+    email = models.CharField(default="", max_length=200)
+    phone = models.CharField(default="", max_length=10)
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
+
 
 class Nominator(models.Model):
-
     id = models.IntegerField(primary_key=True)
     first_name = models.CharField(default="", max_length=30)
     last_name = models.CharField(default="", max_length=30)
     email = models.CharField(default="", max_length=200)
     password = models.CharField(default="", max_length=200)
     phone = models.CharField(default="", max_length=10)
-
     def __str__(self):
         """this sets the default return for this object"""
         return self.description
