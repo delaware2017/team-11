@@ -27,6 +27,11 @@ urlpatterns = [
             form_class=UserCreationForm,
             success_url='/'
     )),
+    url(r'^accounts/student/', CreateView.as_view(
+            template_name='nominations/student_nominations.html',
+            success_url='/',
+            form_class=UserCreationForm
+    )),
     url(r'^admin/', admin.site.urls),
     url(r'^', include('nominations.urls')),
 ]
