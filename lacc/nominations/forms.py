@@ -14,6 +14,8 @@ class StudentForm(ModelForm):
             'school_name',
             'district',
             'county',
+            'academics',
+            'overall',
             'athletic',
             'arts',
             'stem',
