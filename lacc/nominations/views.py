@@ -6,7 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.db.models import Count
 
+from django import forms
+from django.utils import timezone
 from django.contrib.auth.models import User
+from nominations.forms import NominatorForm
 
 # Create your views here.
 
@@ -16,6 +19,22 @@ def index(request):
 #        'todos_by_user': todos_by_user
 #    }
     return render(request, "nominations/index.html")
+
+def add_model(request):
+
+    if request.method == "POST":
+        form = NominatorForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.timestamp = timezone.now()
+            model_instance.save()
+            return redirect('/')
+
+    else:
+
+        form = NominatorForm()
+
+        return render(request, "registration/register0.html", {'form': form})
 
 #def landing(request):
 #    return render(request, "/landing.html")
