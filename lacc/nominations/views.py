@@ -17,4 +17,7 @@ def index(request):
 #    }
     return render(request, "nominations/index.html")
 
+#def landing(request):
+#    return render(request, "/landing.html")
+
 #@method_decorator(login_required, name='dispatch')  # Require login
