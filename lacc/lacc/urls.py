@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^accounts/logout/', LogoutView.as_view(), name="user_logout"),
     url(r'^accounts/register/', CreateView.as_view(
             template_name='registration/register.html',
+            form_class = SignUpForm,
             success_url='/'
     )),
     url(r'^student/create/', CreateView.as_view(
