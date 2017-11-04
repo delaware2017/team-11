@@ -15,6 +15,7 @@ class Student(models.Model):
     email = models.CharField(default="null", max_length=200)
     phone = models.CharField(default="null", max_length=10)
     hispanic = models.BooleanField(default=False)
+    gender = models.CharField(default="null", choices=GENDER, max_length = 7)
     birthday = models.DateField(default=datetime.datetime.now)
     school_name = models.CharField(default="null", max_length=300)
     district = models.CharField(default="null", max_length=50)

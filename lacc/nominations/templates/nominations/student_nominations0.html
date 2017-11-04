@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!--<form action="" method="post">{% csrf_token %}-->
+<!--{{form}}-->
+<!--<input type="submit" value="Confirm" />-->
+<!--</form>-->
+
+<h2>Student Nomination Form</h2>
+<h5>Enter the following information about the student you wish to nominate.</h5>
+<br>
+<div>
+  <form action="" method="post">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+      <button type="submit" value="save" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+{% endblock %}

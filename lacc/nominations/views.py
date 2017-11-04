@@ -34,6 +34,20 @@ def get_nominator(request):
 
     return render(request, "registration/register.html", {'form': form})
 
+def get_student(request):
+
+    if request.method == "POST":
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+
+    else:
+
+        form = StudentForm()
+
+    return render(request, "nominations/student_nominations0.html", {'form': form})
+
 #def landing(request):
 #    return render(request, "/landing.html")
 
