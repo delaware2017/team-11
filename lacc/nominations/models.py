@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 # Leverage Django's built-in User models
 from django.contrib.auth.models import User
+from django.forms import ModelForm
 
 class Student(models.Model):
     GENDER = (
@@ -33,16 +34,21 @@ class Student(models.Model):
 class Nominator(models.Model):
 
     id = models.IntegerField(primary_key=True)
-    first_name = models.CharField(default="null", max_length=30)
-    last_name = models.CharField(default="null", max_length=30)
-    email = models.CharField(default="null", max_length=200)
-    password = models.CharField(default="null", max_length=200)
-    phone = models.CharField(default="null", max_length=10)
+    first_name = models.CharField(default="", max_length=30)
+    last_name = models.CharField(default="", max_length=30)
+    email = models.CharField(default="", max_length=200)
+    password = models.CharField(default="", max_length=200)
+    phone = models.CharField(default="", max_length=10)
     #students = models.OneToManyField(Student)
 
     def __str__(self):
         """this sets the default return for this object"""
         return self.description
+
+class NominatorForm(ModelForm):
+    class Meta:
+        model = Nominator
+        fields = ['first_name', 'last_name', 'email', 'phone']
 
 class Grader(models.Model):
 

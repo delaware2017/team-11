@@ -1,7 +1,8 @@
-from django.forms import ModelForm
 from nominations.models import Nominator
+from django import forms
+from django.forms import ModelForm
 
 class NominatorForm(ModelForm):
     class Meta:
         model = Nominator
-        fields = ['first_name', 'last_name', 'email', 'phone']
+        fields = ['first_name', 'last_name', 'phone', 'email', 'password']

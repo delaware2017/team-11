@@ -20,21 +20,19 @@ def index(request):
 #    }
     return render(request, "nominations/index.html")
 
-def add_model(request):
+def get_nominator(request):
 
     if request.method == "POST":
         form = NominatorForm(request.POST)
         if form.is_valid():
-            model_instance = form.save(commit=False)
-            model_instance.timestamp = timezone.now()
-            model_instance.save()
-            return redirect('/')
+            form.save()
+            return HttpResponseRedirect('/')
 
     else:
 
         form = NominatorForm()
 
-        return render(request, "registration/register0.html", {'form': form})
+    return render(request, "registration/register.html", {'form': form})
 
 #def landing(request):
 #    return render(request, "/landing.html")
